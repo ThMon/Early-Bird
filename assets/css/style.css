@@ -48,7 +48,6 @@ section {
 	vertical-align: top;
 }
 
-
 #tle {
 	display: flex;
 	justify-content: center;
@@ -69,7 +68,6 @@ h2 {
 	color:#E50914;
 	font-family: 'Futura', arial, sans-serif;
 	font-size: 1.7em;
-
 }
 
 #tle i{
@@ -79,10 +77,6 @@ h2 {
 p {
 	font-family: 'Futura', arial, sans-serif;
 	color: white;
-}
-
-#title {
-
 }
 
 #description {

@@ -25,13 +25,12 @@ ajaxGet("https://api.themoviedb.org/3/movie/upcoming?api_key=e082a5c50ed38ae7429
  		$('#etoile').append( '<i class="fa fa-star" aria-hidden="true"></i>');
  	}
 
- 	//création de la liste des films en JS natif
+ 	//création de la liste des films
  	var container = document.querySelector('#nav');
 
  	for( var i = 0; i < reponse.length; i++){
-           var film = reponse[i].original_title;
-
-           $('#nav').append('<li data-index="'+i+'""><a href="#">'+film+'</a></li>');
+        var film = reponse[i].original_title;
+        $('#nav').append('<li data-index="'+i+'""><a href="#">'+film+'</a></li>');
 
            //façon native
            /*var li = document.createElement('li');
@@ -39,9 +38,9 @@ ajaxGet("https://api.themoviedb.org/3/movie/upcoming?api_key=e082a5c50ed38ae7429
            li.appendChild(films);
            li.setAttribute('data-index',i);
            container.appendChild(li);*/
-         }
+    }
 
-    // affiche le film suivant quand clique sur flèche utilisation jQuery
+    // affiche le film suivant quand clique sur flèche
  	function goToNext() {
 		if(index < reponse.length-1) {
 			index ++;
@@ -49,19 +48,19 @@ ajaxGet("https://api.themoviedb.org/3/movie/upcoming?api_key=e082a5c50ed38ae7429
 		} else {
 			index = 0;
 			console.log(index);
-
 		}
+
 		moyenne = Math.round(reponse[index].vote_average);
 		img.src = "https://image.tmdb.org/t/p/w500"+reponse[index].backdrop_path+"";
  		title.textContent = reponse[index].original_title;
  		desc.textContent = reponse[index].overview;
  		note.textContent = "Note: "+moyenne+"/10";
  		$("#etoile").empty();
-	 		for( var j = 0; j < moyenne; j++){
+	 	for( var j = 0; j < moyenne; j++){
 	 		$('#etoile').append( '<i class="fa fa-star" aria-hidden="true"></i>');
 	 	}
 	}
-
+	// affiche le film précédent quand clique sur flèche
 	function goToPreview() { 
 		if (index > 0) {
 			index --;
@@ -70,6 +69,7 @@ ajaxGet("https://api.themoviedb.org/3/movie/upcoming?api_key=e082a5c50ed38ae7429
 			index = reponse.length - 1;
 			console.log(index);
 		}
+
 		moyenne = Math.round(reponse[index].vote_average);
 		img.src = "https://image.tmdb.org/t/p/w500"+reponse[index].backdrop_path+"";
 	 	title.textContent = reponse[index].original_title;
@@ -77,10 +77,10 @@ ajaxGet("https://api.themoviedb.org/3/movie/upcoming?api_key=e082a5c50ed38ae7429
 	 	note.textContent = "Note: "+moyenne+"/10";
 	 	$("#etoile").empty();
 	 	for( var j = 0; j < moyenne; j++){
-	 	$('#etoile').append( '<i class="fa fa-star" aria-hidden="true"></i>');
+	 		$('#etoile').append( '<i class="fa fa-star" aria-hidden="true"></i>');
 	 	} 
 	}
-
+	// affiche le film suivant quand clique sur la liste
 	function selectOnList() {
 		var data = $(this).data('index');
 		var moy = Math.round(reponse[data].vote_average);
@@ -91,12 +91,12 @@ ajaxGet("https://api.themoviedb.org/3/movie/upcoming?api_key=e082a5c50ed38ae7429
 	 	note.textContent = "Note: "+moy+"/10";
 	 	$("#etoile").empty();
 	 	for( var j = 0; j < moy; j++){
-	 	$('#etoile').append( '<i class="fa fa-star" aria-hidden="true"></i>');
+	 		$('#etoile').append( '<i class="fa fa-star" aria-hidden="true"></i>');
 	 	}
 	}
 
 
-
+	//DOM écoute des évenements
 	$('#next').click(goToNext);
 	$('#preview').click(goToPreview);
 	$('li').click(selectOnList);
