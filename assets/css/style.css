@@ -1,0 +1,128 @@
+* {
+	box-sizing: border-box;
+}
+
+@font-face {
+    font-family: 'Helvetica';
+    src: url('./fonts/HelveticaNeueLTStd-Lt.otf');
+}
+
+
+@font-face {
+    font-family: 'Futura';
+    src: url('./fonts/FTN87.otf');
+}
+
+body {
+	background-color:#141414;
+}
+
+h1 {
+	text-align: center;
+	color:#E50914;
+	font-family: 'Futura', arial, sans-serif;
+}
+
+
+section {
+	display: inline-block;
+	margin-top: 5%;
+
+}
+
+#left-part {
+	display: inline-block;
+	width: 70%;
+	margin-left: 5%;
+}
+
+#left-part img {
+	width: 80%;
+	margin: auto;
+	display: block;
+}
+
+#right-part {
+	width: 20%;
+	display: inline-block;
+	vertical-align: top;
+}
+
+
+#tle {
+	display: flex;
+	justify-content: center;
+}
+
+.fa {
+	width: 5%;
+	margin-top:2.5%;
+	font-size: 1.6em;
+	color:#E50914;
+}
+
+.fa-arrow-right {
+	text-align: right;
+}
+
+h2 {
+	color:#E50914;
+	font-family: 'Futura', arial, sans-serif;
+	font-size: 1.7em;
+
+}
+
+#tle i{
+	font-size: 1.7em;
+}
+
+p {
+	font-family: 'Futura', arial, sans-serif;
+	color: white;
+}
+
+#title {
+
+}
+
+#description {
+	
+	width: 80%;
+	margin: auto;
+	font-size: 1.2em;
+}
+
+li {
+	color: white;
+	margin-top: 1%;
+}
+
+li a{
+	font-family: 'Futura', arial, sans-serif;
+	color: white;
+	text-decoration: none;
+}
+
+
+
+.notation {
+	display: flex;
+	justify-content: center;
+	margin-bottom: 5%;
+	margin-top: 5%;
+}
+
+
+#note {
+	margin-top: 0.1%;
+}
+
+#etoile {
+	margin-left: 2%;
+}
+
+#etoile i{
+	width: 20px;
+	vertical-align: middle;
+}
+
